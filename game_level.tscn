@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm73folxxovy1"]
+
+[ext_resource type="PackedScene" uid="uid://cgbmmo5gf046f" path="res://arrow.tscn" id="1_44nce"]
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Arrow" parent="." instance=ExtResource("1_44nce")]
+position = Vector2(-120, -431.5)
+key_name = "button_S"
+
+[node name="Arrow2" parent="." instance=ExtResource("1_44nce")]
+position = Vector2(-30, -431.5)
+frame = 1
+key_name = "button_D"
+
+[node name="Arrow3" parent="." instance=ExtResource("1_44nce")]
+position = Vector2(60, -431.5)
+frame = 2
+key_name = "button_K"
+
+[node name="Arrow4" parent="." instance=ExtResource("1_44nce")]
+position = Vector2(150, -431.5)
+frame = 3
+key_name = "button_L"
