@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm73folxxovy1"]
+[gd_scene load_steps=3 format=3 uid="uid://dm73folxxovy1"]
 
 [ext_resource type="PackedScene" uid="uid://cgbmmo5gf046f" path="res://arrow.tscn" id="1_44nce"]
+[ext_resource type="PackedScene" uid="uid://de6had0qcucpi" path="res://game_ui.tscn" id="2_ikix1"]
 
 [node name="GameLevel" type="Node2D"]
 
@@ -24,3 +25,5 @@ key_name = "button_K"
 position = Vector2(150, -280)
 frame = 3
 key_name = "button_L"
+
+[node name="GameUI" parent="." instance=ExtResource("2_ikix1")]

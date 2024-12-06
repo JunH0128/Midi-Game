@@ -17,7 +17,7 @@ func _process(delta):
 		var key_to_pop = falling_key_queue.pop_front()
 		
 		var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
-		print(distance_from_pass)
+		Signals.IncrementScore.emit(100)
 		key_to_pop.queue_free()
 
 func CreateFallingKey():
