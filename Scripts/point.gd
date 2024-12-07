@@ -5,7 +5,7 @@ extends Sprite2D
 var init_y_pos: float = 360
 
 var has_passed: bool = false
-var pass_threshold = 300.0
+var pass_threshold = -280
 
 func _init():
 	set_process(false)

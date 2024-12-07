@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://1q0jn8k5pbvk"]
 
 [ext_resource type="Texture2D" uid="uid://bt7dwl8cijrbq" path="res://Arrow.png" id="1_210nd"]
-[ext_resource type="Script" path="res://point.gd" id="2_u53cj"]
+[ext_resource type="Script" path="res://Scripts/point.gd" id="2_u53cj"]
 
 [node name="point" type="Sprite2D"]
 position = Vector2(348, 294)
