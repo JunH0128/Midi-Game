@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm73folxxovy1"]
+[gd_scene load_steps=5 format=3 uid="uid://dm73folxxovy1"]
 
 [ext_resource type="PackedScene" uid="uid://cgbmmo5gf046f" path="res://arrow.tscn" id="1_44nce"]
 [ext_resource type="PackedScene" uid="uid://de6had0qcucpi" path="res://game_ui.tscn" id="2_ikix1"]
+[ext_resource type="PackedScene" uid="uid://ck5ybjg47nno0" path="res://level_editor.tscn" id="3_5au54"]
+[ext_resource type="PackedScene" uid="uid://cmlwrmo480wvq" path="res://sound.tscn" id="4_0lpac"]
 
 [node name="GameLevel" type="Node2D"]
 
@@ -27,3 +29,7 @@ frame = 3
 key_name = "button_L"
 
 [node name="GameUI" parent="." instance=ExtResource("2_ikix1")]
+
+[node name="LevelEditor" parent="." instance=ExtResource("3_5au54")]
+
+[node name="Sound" parent="." instance=ExtResource("4_0lpac")]
