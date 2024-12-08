@@ -16,6 +16,9 @@ var great_press_score: float = 100
 var nice_press_score: float = 50
 var ok_press_score: float = 20
 
+func _ready():
+	$GlowOverlay.frame = frame + 4
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
@@ -31,36 +34,47 @@ func _process(delta):
 				get_tree().get_root().call_deferred("add_child", st_inst)
 				st_inst.SetTextInfo("MISS")
 				st_inst.global_position = global_position + Vector2(0, 0)
+				Signals.ResetCombo.emit()
 			
-	if Input.is_action_just_pressed(key_name):
+	if Input.is_action_just_pressed(key_name) and falling_key_queue.size() > 0:
 		var key_to_pop = falling_key_queue.pop_front()
 		
 		var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
+		
+		$AnimationPlayer.stop()
+		$AnimationPlayer.play("key_hit")
 		
 		var press_score_text: String = ""
 		
 		if distance_from_pass < perfect_press_threshold:
 			Signals.IncrementScore.emit(perfect_press_score)
 			press_score_text = "PERFECT"
+			Signals.IncrementCombo.emit()
 		elif distance_from_pass < great_press_threshold:
 			Signals.IncrementScore.emit(great_press_score)
 			press_score_text = "GREAT"
+			Signals.IncrementCombo.emit()
 		elif distance_from_pass < nice_press_threshold:
 			Signals.IncrementScore.emit(nice_press_score)
 			press_score_text = "NICE"
+			Signals.IncrementCombo.emit()
 		elif distance_from_pass < ok_press_threshold:
 			Signals.IncrementScore.emit(ok_press_score)
 			press_score_text = "OK"
+			Signals.IncrementCombo.emit()
 		else:
 			press_score_text = "MISS"
+			Signals.ResetCombo.emit()
+			
 			pass
 		
-		key_to_pop.queue_free()
+		#key_to_pop.queue_free()
 		
 		var st_inst = score_text.instantiate()
 		get_tree().get_root().call_deferred("add_child", st_inst)
 		st_inst.SetTextInfo(press_score_text)
 		st_inst.global_position = global_position + Vector2(0, 0)
+		
 
 func CreateFallingKey():
 	var point = falling_key.instantiate()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://de6had0qcucpi"]
+[gd_scene load_steps=3 format=3 uid="uid://de6had0qcucpi"]
 
 [ext_resource type="Script" path="res://Scripts/game_ui.gd" id="1_ovowg"]
+[ext_resource type="FontFile" uid="uid://bwsct6qgxevsh" path="res://SfSuper04Bold-V4g7y.ttf" id="2_n5r0s"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -15,10 +16,27 @@ script = ExtResource("1_ovowg")
 
 [node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 26.0
-offset_top = 29.0
-offset_right = 185.0
-offset_bottom = 86.0
-theme_override_font_sizes/normal_font_size = 40
-text = "0"
+offset_left = -2.0
+offset_top = 26.0
+offset_right = 235.0
+offset_bottom = 90.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("2_n5r0s")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[center]0"
+scroll_active = false
+
+[node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 477.0
+offset_top = 337.0
+offset_right = 750.0
+offset_bottom = 384.0
+theme_override_colors/default_color = Color(0.124001, 0.818516, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("2_n5r0s")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[center]0x "
 scroll_active = false
